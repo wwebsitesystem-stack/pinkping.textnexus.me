@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pinkping v2.0 ✨ Preppy Edition</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons -->
@@ -40,20 +41,14 @@
         }
 
         /* Custom preppy scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 240, 245, 0.6);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(255, 240, 245, 0.6); }
         ::-webkit-scrollbar-thumb {
             background: #ff69b4;
             border-radius: 9999px;
             border: 2px solid #fff0f6;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ff2a85;
-        }
+        ::-webkit-scrollbar-thumb:hover { background: #ff2a85; }
 
         .preppy-card {
             background: rgba(255, 255, 255, 0.92);
@@ -62,24 +57,15 @@
             box-shadow: 0 12px 35px rgba(255, 42, 133, 0.18);
         }
 
-        .preppy-shadow {
-            box-shadow: 0 10px 25px rgba(255, 42, 133, 0.22);
-        }
+        .preppy-shadow { box-shadow: 0 10px 25px rgba(255, 42, 133, 0.22); }
+        .preppy-glow { box-shadow: 0 0 20px rgba(255, 105, 180, 0.5); }
 
-        .preppy-glow {
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-        }
-
-        .btn-bubbly {
-            transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
+        .btn-bubbly { transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .btn-bubbly:hover {
             transform: translateY(-2px) scale(1.03);
             box-shadow: 0 8px 20px rgba(255, 42, 133, 0.3);
         }
-        .btn-bubbly:active {
-            transform: scale(0.96);
-        }
+        .btn-bubbly:active { transform: scale(0.96); }
 
         .message-bubble {
             border-radius: 1.5rem;
@@ -104,10 +90,7 @@
             box-shadow: 0 4px 12px rgba(255, 182, 193, 0.25);
         }
 
-        .pulse-sparkle {
-            animation: pulseSparkle 2s infinite alternate;
-        }
-
+        .pulse-sparkle { animation: pulseSparkle 2s infinite alternate; }
         @keyframes pulseSparkle {
             0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
             100% { transform: scale(1.15) rotate(10deg); opacity: 1; }
@@ -119,9 +102,7 @@
             box-shadow: 0 4px 15px rgba(255, 42, 133, 0.4);
         }
 
-        .hide-view {
-            display: none !important;
-        }
+        .hide-view { display: none !important; }
     </style>
 </head>
 <body class="h-screen w-screen flex flex-col justify-between overflow-hidden select-none">
@@ -135,7 +116,6 @@
 
     <header class="relative z-20 mx-4 mt-3 mb-2 shrink-0">
         <div class="preppy-card rounded-full px-6 py-3 flex items-center justify-between border-4 border-white">
-            <!-- Logo & Badge -->
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-hotpink to-bubblegum flex items-center justify-center text-white text-xl shadow-md border-2 border-white">
                     💖
@@ -181,7 +161,6 @@
                 <h2 class="text-4xl font-black text-hotpink mb-1 tracking-tight">pinkping 💖</h2>
                 <p class="text-xs font-black text-bubblegum uppercase tracking-widest mb-6">v2.0 ⚡️ Preppy Texting Platform</p>
 
-                <!-- Status Banner -->
                 <div id="auth-status" class="mb-6 bg-pink-50 border-2 border-pink-200 rounded-2xl p-3 text-xs font-bold text-hotpink flex items-center justify-center gap-2">
                     <i class="fa-solid fa-sparkles text-goldsparkle"></i>
                     <span>Ready to spill the tea! Choose sign in below ✨</span>
@@ -189,7 +168,7 @@
 
                 <!-- Google Auth Button -->
                 <button id="btn-google-auth" onclick="handleGoogleSignIn()" class="btn-bubbly w-full bg-white border-3 border-pink-300 text-hotpink font-black py-3.5 px-6 rounded-full hover:bg-pink-50 transition-all shadow-md flex items-center justify-center gap-3 text-base mb-3 border-2">
-                    <i class="fa-brands fa-google text-red-500 text-lg"></i> Sign in with Google ⚡️️
+                    <i class="fa-brands fa-google text-red-500 text-lg"></i> Sign in with Google ⚡
                 </button>
 
                 <div class="flex items-center my-4 opacity-50">
@@ -216,7 +195,6 @@
             
             <!-- Sidebar: Squad List -->
             <aside id="sidebar-squads" class="w-full md:w-80 preppy-card rounded-[2.5rem] flex flex-col border-4 border-white overflow-hidden shrink-0">
-                <!-- Sidebar Header -->
                 <div class="p-5 border-b-2 border-pink-100 bg-white/60 flex flex-col gap-3">
                     <div class="flex items-center justify-between">
                         <h2 class="font-black text-hotpink text-lg tracking-wide uppercase flex items-center gap-2">
@@ -227,7 +205,6 @@
                         </span>
                     </div>
 
-                    <!-- Action Buttons -->
                     <div class="grid grid-cols-2 gap-2">
                         <button onclick="openModal('modal-create-squad')" class="btn-bubbly bg-gradient-to-r from-hotpink to-bubblegum text-white font-black text-xs py-2.5 px-3 rounded-full shadow-md border border-white flex items-center justify-center gap-1.5">
                             <i class="fa-solid fa-plus-circle"></i> Create ✨
@@ -238,14 +215,12 @@
                     </div>
                 </div>
 
-                <!-- Squad List Items Container -->
                 <div id="squad-list-container" class="flex-1 overflow-y-auto p-3 space-y-2">
                     <div class="text-center text-pink-300 p-8 font-bold text-xs animate-pulse">
                         Loading your bestie chats... ☕️
                     </div>
                 </div>
 
-                <!-- User Profile Footer -->
                 <div class="p-3 bg-gradient-to-r from-pink-100 to-cottonpink border-t-2 border-white flex items-center justify-between">
                     <div class="flex items-center gap-2 overflow-hidden">
                         <div id="profile-avatar" class="w-10 h-10 rounded-full bg-hotpink text-white flex items-center justify-center font-black text-base border-2 border-white shadow-sm shrink-0">
@@ -265,10 +240,9 @@
             <!-- Main Chat Room Window -->
             <section id="chat-window" class="flex-1 preppy-card rounded-[2.5rem] border-4 border-white flex flex-col overflow-hidden relative">
                 
-                <!-- Empty Squad Selection State -->
                 <div id="chat-empty-state" class="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center bg-white/80 backdrop-blur-sm">
                     <div class="w-24 h-24 rounded-full bg-pink-100 flex items-center justify-center text-5xl mb-4 border-4 border-white shadow-md animate-bounce">
-                        🛍️️
+                        🛍
                     </div>
                     <h3 class="text-3xl font-black text-hotpink mb-2">Select a Squad!</h3>
                     <p class="text-bubblegum font-bold max-w-sm text-sm">
@@ -284,16 +258,13 @@
                     </div>
                 </div>
 
-                <!-- Active Chat Container -->
                 <div id="chat-active-state" class="flex-1 flex flex-col h-full hide-view">
                     
-                    <!-- Chat Header Bar -->
                     <div class="h-20 border-b-2 border-pink-100 bg-white/70 px-6 flex items-center justify-between shrink-0 shadow-sm z-10">
                         <div class="flex items-center gap-3">
                             <button onclick="toggleMobileSidebar()" class="md:hidden w-9 h-9 rounded-full bg-pink-100 text-hotpink flex items-center justify-center text-sm font-bold">
                                 <i class="fa-solid fa-bars"></i>
                             </button>
-
                             <div class="w-11 h-11 rounded-full bg-gradient-to-tr from-hotpink to-bubblegum text-white flex items-center justify-center font-black text-lg border-2 border-white shadow-sm">
                                 🪩
                             </div>
@@ -315,8 +286,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Owner Control Settings Button -->
                         <div id="owner-actions-wrapper" class="hide-view">
                             <button onclick="openModal('modal-owner-settings')" class="btn-bubbly px-4 py-2 rounded-full bg-white border-2 border-pink-300 text-hotpink font-black text-xs hover:bg-pink-50 shadow-sm flex items-center gap-2">
                                 <i class="fa-solid fa-gear"></i> Owner Controls
@@ -324,17 +293,14 @@
                         </div>
                     </div>
 
-                    <!-- Messages Feed Container -->
                     <div id="messages-feed" class="flex-1 overflow-y-auto p-6 space-y-4 flex flex-col bg-white/40">
-                        <!-- Messages render dynamically -->
+                        <!-- Messages dynamic -->
                     </div>
 
-                    <!-- Disabled Chat Banner -->
                     <div id="disabled-chat-banner" class="bg-orange-100 border-t-2 border-orange-300 p-3 text-center text-xs font-black text-orange-600 hide-view">
                         🔒 Texting has been paused by the squad owner 👑
                     </div>
 
-                    <!-- Input Bar -->
                     <div id="chat-input-wrapper" class="p-4 bg-white/80 border-t-2 border-pink-100 shrink-0">
                         <form id="form-send-message" onsubmit="handleSendMessage(event)" class="flex gap-3 max-w-4xl mx-auto items-center">
                             <div class="flex-1 relative">
@@ -346,7 +312,6 @@
                             </button>
                         </form>
                     </div>
-
                 </div>
             </section>
         </div>
@@ -373,16 +338,10 @@
             <div class="text-4xl mb-2">✨</div>
             <h3 class="text-2xl font-black text-hotpink mb-1">Create New Squad</h3>
             <p class="text-xs font-bold text-bubblegum mb-6">Start a new room for the besties!</p>
-
             <input type="text" id="input-create-name" placeholder="Squad Name (e.g. Gossip Girls 💄)" class="w-full rounded-full border-2 border-pink-200 px-5 py-3 text-center text-sm font-bold text-hotpink placeholder-pink-300 focus:outline-none focus:border-hotpink mb-6 bg-white shadow-inner" maxlength="24">
-
             <div class="grid grid-cols-2 gap-3">
-                <button onclick="closeModal('modal-create-squad')" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-hotpink bg-white border-2 border-pink-200">
-                    Cancel
-                </button>
-                <button onclick="submitCreateSquad()" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-white bg-gradient-to-r from-hotpink to-bubblegum shadow-md border-2 border-white">
-                    Create 💖
-                </button>
+                <button onclick="closeModal('modal-create-squad')" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-hotpink bg-white border-2 border-pink-200">Cancel</button>
+                <button onclick="submitCreateSquad()" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-white bg-gradient-to-r from-hotpink to-bubblegum shadow-md border-2 border-white">Create 💖</button>
             </div>
         </div>
     </div>
@@ -393,16 +352,10 @@
             <div class="text-4xl mb-2">🌸</div>
             <h3 class="text-2xl font-black text-hotpink mb-1">Join a Squad</h3>
             <p class="text-xs font-bold text-bubblegum mb-6">Enter secret 6-character code!</p>
-
             <input type="text" id="input-join-code" placeholder="e.g. PINK-8X9" class="w-full rounded-full border-2 border-pink-200 px-5 py-3 text-center font-mono font-black text-lg text-hotpink placeholder-pink-300 focus:outline-none focus:border-hotpink uppercase mb-6 bg-white shadow-inner tracking-widest" maxlength="8">
-
             <div class="grid grid-cols-2 gap-3">
-                <button onclick="closeModal('modal-join-squad')" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-hotpink bg-white border-2 border-pink-200">
-                    Cancel
-                </button>
-                <button onclick="submitJoinSquad()" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-white bg-gradient-to-r from-hotpink to-bubblegum shadow-md border-2 border-white">
-                    Join Squad 🪩
-                </button>
+                <button onclick="closeModal('modal-join-squad')" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-hotpink bg-white border-2 border-pink-200">Cancel</button>
+                <button onclick="submitJoinSquad()" class="btn-bubbly py-2.5 rounded-full font-black text-xs text-white bg-gradient-to-r from-hotpink to-bubblegum shadow-md border-2 border-white">Join Squad 🪩</button>
             </div>
         </div>
     </div>
@@ -413,7 +366,6 @@
             <div class="text-4xl mb-2">⚙️</div>
             <h3 class="text-2xl font-black text-hotpink mb-1">Owner Settings</h3>
             <p class="text-xs font-bold text-bubblegum mb-6">Only you (Queen Bee 👑) can alter this squad.</p>
-
             <div class="space-y-3 mb-6">
                 <button id="btn-toggle-pause" onclick="togglePauseSquad()" class="btn-bubbly w-full py-3 rounded-full font-black text-xs bg-amber-50 text-amber-600 border-2 border-amber-300 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-pause"></i> <span>Pause Texting</span>
@@ -422,14 +374,13 @@
                     <i class="fa-solid fa-trash"></i> <span>Delete Squad Permanently</span>
                 </button>
             </div>
-
             <button onclick="closeModal('modal-owner-settings')" class="btn-bubbly w-full py-2.5 rounded-full font-black text-xs text-hotpink bg-pink-100 hover:bg-pink-200">
                 Close Settings ✨
             </button>
         </div>
     </div>
 
-    <!-- Modal: Custom Preppy Alert Dialog -->
+    <!-- Modal: Alert -->
     <div id="modal-alert" class="fixed inset-0 z-[60] flex items-center justify-center bg-pink-900/40 backdrop-blur-md hide-view p-4">
         <div class="preppy-card rounded-[3rem] p-7 max-w-xs w-full border-4 border-white text-center preppy-glow">
             <div id="alert-icon" class="text-4xl mb-3">🔔</div>
@@ -445,46 +396,49 @@
         import { 
             getAuth, 
             signInAnonymously, 
-            signInWithCustomToken, 
             signInWithPopup, 
             GoogleAuthProvider, 
             onAuthStateChanged, 
             signOut 
         } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
         import { 
-            getFirestore, 
-            doc, 
-            setDoc, 
-            getDoc, 
-            updateDoc, 
-            deleteDoc, 
-            onSnapshot, 
-            collection, 
-            addDoc 
-        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+            getDatabase, 
+            ref, 
+            set, 
+            push, 
+            onValue, 
+            remove, 
+            update
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
 
-        // Global environment declarations
-        const appId = typeof __app_id !== 'undefined' ? __app_id : 'pinkping-v2';
-        const firebaseConfig = typeof __firebase_config !== 'undefined' 
-            ? JSON.parse(__firebase_config) 
-            : { apiKey: "mock-key", projectId: "pinkping-demo" };
-        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        // Exact User Firebase Config Injected
+        const firebaseConfig = {
+            apiKey: "AIzaSyAO_ffupJOIMPE9m4ARtaqSzC1vGDkIAco",
+            authDomain: "nexus-web-development-official.firebaseapp.com",
+            databaseURL: "https://nexus-web-development-official-default-rtdb.firebaseio.com",
+            projectId: "nexus-web-development-official",
+            storageBucket: "nexus-web-development-official.firebasestorage.app",
+            messagingSenderId: "553556577139",
+            appId: "1:553556577139:web:42b0345646ae65a1999306",
+            measurementId: "G-EGNFF5CXLF"
+        };
 
         const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
         const auth = getAuth(app);
+        const db = getDatabase(app);
 
-        // App state variables
+        // App state
         let currentUser = null;
         let userDisplayName = "Bestie";
         let userJoinedSquadIds = [];
         let allSquadsList = [];
         let activeSquadId = null;
+        
         let unsubscribeMessages = null;
         let unsubscribeSquads = null;
         let unsubscribeProfile = null;
 
-        // UI DOM Elements
+        // UI Elements
         const authScreen = document.getElementById('auth-screen');
         const authStatus = document.getElementById('auth-status');
         const squadListContainer = document.getElementById('squad-list-container');
@@ -516,34 +470,13 @@
             const ghostContent = document.getElementById('ghostlink-tab-content');
 
             if (tabName === 'chat') {
-                navChat.classList.add('tab-active');
-                navChat.classList.remove('text-hotpink');
-                navGhost.classList.remove('tab-active');
-                navGhost.classList.add('text-hotpink');
-
-                chatContent.classList.remove('hide-view');
-                ghostContent.classList.add('hide-view');
+                navChat.classList.add('tab-active'); navChat.classList.remove('text-hotpink');
+                navGhost.classList.remove('tab-active'); navGhost.classList.add('text-hotpink');
+                chatContent.classList.remove('hide-view'); ghostContent.classList.add('hide-view');
             } else {
-                navGhost.classList.add('tab-active');
-                navGhost.classList.remove('text-hotpink');
-                navChat.classList.remove('tab-active');
-                navChat.classList.add('text-hotpink');
-
-                ghostContent.classList.remove('hide-view');
-                chatContent.classList.add('hide-view');
-            }
-        }
-
-        async function initAuth() {
-            try {
-                if (initialAuthToken) {
-                    await signInWithCustomToken(auth, initialAuthToken);
-                } else {
-                    // Start anonymous auth as quick fallback backend
-                    await signInAnonymously(auth);
-                }
-            } catch (err) {
-                console.warn("Auth initialization fallback mode active:", err);
+                navGhost.classList.add('tab-active'); navGhost.classList.remove('text-hotpink');
+                navChat.classList.remove('tab-active'); navChat.classList.add('text-hotpink');
+                ghostContent.classList.remove('hide-view'); chatContent.classList.add('hide-view');
             }
         }
 
@@ -557,8 +490,8 @@
                     showAlert(`Welcome back ${userDisplayName}! ✨`, "💖");
                 }
             } catch (err) {
-                console.warn("Google Popup blocked or failed, using guest mode:", err);
-                authStatus.innerHTML = '<span class="text-red-500">Google popup blocked in iframe sandbox. Use Quick Sign-In below! 🌸</span>';
+                console.error("Auth error:", err);
+                authStatus.innerHTML = '<span class="text-red-500">Google sign-in failed. Try quick sign-in below! 🌸</span>';
             }
         }
 
@@ -566,25 +499,18 @@
             const inputName = document.getElementById('quick-username').value.trim();
             userDisplayName = inputName.length > 0 ? inputName : "Bestie Sparkle";
 
-            if (!auth.currentUser) {
-                try {
-                    await signInAnonymously(auth);
-                } catch(e) {
-                    console.error("Anonymous auth failed", e);
-                }
+            try {
+                authStatus.innerHTML = '<span>Entering guest mode...</span>';
+                await signInAnonymously(auth);
+            } catch(e) {
+                console.error("Anonymous auth failed", e);
+                authStatus.innerHTML = '<span class="text-red-500">Sign-in error. Check console. 🥺</span>';
             }
-
-            // Sync user UI and close overlay
-            document.getElementById('profile-name').textContent = userDisplayName;
-            document.getElementById('user-badge').textContent = userDisplayName;
-            authScreen.classList.add('hide-view');
-            setupRealtimeListeners();
         }
 
         window.logoutUser = async function() {
-            try {
-                await signOut(auth);
-            } catch(e){}
+            try { await signOut(auth); } catch(e){}
+            closeActiveSquad();
             authScreen.classList.remove('hide-view');
             authStatus.innerHTML = '<span>Logged out. Pick sign-in method to return! ✨</span>';
         }
@@ -592,9 +518,7 @@
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 currentUser = user;
-                if (user.displayName) {
-                    userDisplayName = user.displayName;
-                }
+                if (user.displayName) userDisplayName = user.displayName;
                 document.getElementById('profile-name').textContent = userDisplayName;
                 document.getElementById('user-badge').textContent = userDisplayName;
                 authScreen.classList.add('hide-view');
@@ -602,38 +526,27 @@
             }
         });
 
-        // Initialize default auth
-        initAuth();
-
         function setupRealtimeListeners() {
             if (!currentUser) return;
 
-            // 1. User Profile Document Listener for Joined Squads List
-            const profileRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'profile', 'data');
-            if (unsubscribeProfile) unsubscribeProfile();
-
-            unsubscribeProfile = onSnapshot(profileRef, (docSnap) => {
-                if (docSnap.exists()) {
-                    userJoinedSquadIds = docSnap.data().joinedSquads || [];
-                } else {
-                    userJoinedSquadIds = [];
-                    setDoc(profileRef, { joinedSquads: [] }).catch(console.error);
-                }
+            // 1. Listen to user's joined squads
+            const userJoinedRef = ref(db, `pinkping/users/${currentUser.uid}/joinedSquads`);
+            unsubscribeProfile = onValue(userJoinedRef, (snapshot) => {
+                const val = snapshot.val() || {};
+                userJoinedSquadIds = Object.keys(val);
                 renderSquadList();
             }, (err) => console.error("Profile sync error:", err));
 
-            // 2. Public Squads Collection Listener
-            const squadsRef = collection(db, 'artifacts', appId, 'public', 'data', 'squads');
-            if (unsubscribeSquads) unsubscribeSquads();
-
-            unsubscribeSquads = onSnapshot(squadsRef, (snapshot) => {
+            // 2. Listen to all public squads
+            const squadsRef = ref(db, 'pinkping/squads');
+            unsubscribeSquads = onValue(squadsRef, (snapshot) => {
                 allSquadsList = [];
-                snapshot.forEach((d) => {
-                    allSquadsList.push({ id: d.id, ...d.data() });
+                snapshot.forEach(child => {
+                    allSquadsList.push({ id: child.key, ...child.val() });
                 });
                 renderSquadList();
 
-                // If currently open squad is deleted or locked
+                // Validation if currently viewing a squad
                 if (activeSquadId) {
                     const currentSquad = allSquadsList.find(s => s.id === activeSquadId);
                     if (!currentSquad) {
@@ -648,7 +561,6 @@
 
         function renderSquadList() {
             squadListContainer.innerHTML = '';
-            
             const joinedSquads = allSquadsList.filter(s => userJoinedSquadIds.includes(s.id));
 
             if (joinedSquads.length === 0) {
@@ -668,16 +580,12 @@
 
                 const item = document.createElement('div');
                 item.className = `p-3 rounded-full cursor-pointer transition-all btn-bubbly flex items-center justify-between border-2 ${
-                    isSelected 
-                        ? 'bg-gradient-to-r from-hotpink to-bubblegum text-white border-transparent preppy-shadow' 
-                        : 'bg-white border-pink-100 hover:border-pink-300 text-hotpink'
+                    isSelected ? 'bg-gradient-to-r from-hotpink to-bubblegum text-white border-transparent preppy-shadow' : 'bg-white border-pink-100 hover:border-pink-300 text-hotpink'
                 }`;
 
                 item.innerHTML = `
                     <div class="flex items-center gap-3 overflow-hidden">
-                        <div class="w-10 h-10 rounded-full flex items-center justify-center font-black text-base shrink-0 ${
-                            isSelected ? 'bg-white/20 text-white' : 'bg-pink-100 text-hotpink'
-                        }">
+                        <div class="w-10 h-10 rounded-full flex items-center justify-center font-black text-base shrink-0 ${isSelected ? 'bg-white/20 text-white' : 'bg-pink-100 text-hotpink'}">
                             ${squad.name.charAt(0).toUpperCase()}
                         </div>
                         <div class="overflow-hidden">
@@ -724,13 +632,11 @@
                 ownerActionsWrapper.classList.add('hide-view');
             }
 
-            // Update pause banner
             const pauseBtn = document.getElementById('btn-toggle-pause');
             if (squad.paused) {
                 disabledBanner.classList.remove('hide-view');
                 inputMessage.disabled = !isOwner;
-                if (!isOwner) inputMessage.placeholder = "Texting paused by owner 🔒";
-                else inputMessage.placeholder = "Spill the tea here... ✨ (Owner override active)";
+                inputMessage.placeholder = !isOwner ? "Texting paused by owner 🔒" : "Spill the tea here... ✨ (Owner override)";
                 if (pauseBtn) pauseBtn.innerHTML = '<i class="fa-solid fa-play"></i> <span>Unpause Texting</span>';
             } else {
                 disabledBanner.classList.add('hide-view');
@@ -754,9 +660,7 @@
         function generatePreppyCode() {
             const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
             let code = 'PINK-';
-            for (let i = 0; i < 4; i++) {
-                code += chars.charAt(Math.floor(Math.random() * chars.length));
-            }
+            for (let i = 0; i < 4; i++) code += chars.charAt(Math.floor(Math.random() * chars.length));
             return code;
         }
 
@@ -767,8 +671,10 @@
 
             const code = generatePreppyCode();
             try {
-                const squadsRef = collection(db, 'artifacts', appId, 'public', 'data', 'squads');
-                const newDoc = await addDoc(squadsRef, {
+                const newSquadRef = push(ref(db, 'pinkping/squads'));
+                const squadId = newSquadRef.key;
+                
+                await set(newSquadRef, {
                     name: name,
                     code: code,
                     ownerId: currentUser.uid,
@@ -777,14 +683,11 @@
                     createdAt: Date.now()
                 });
 
-                // Add to user joined list
-                const updatedJoined = [...userJoinedSquadIds, newDoc.id];
-                const profileRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'profile', 'data');
-                await setDoc(profileRef, { joinedSquads: updatedJoined }, { merge: true });
+                await set(ref(db, `pinkping/users/${currentUser.uid}/joinedSquads/${squadId}`), true);
 
                 closeModal('modal-create-squad');
                 input.value = '';
-                openSquad(newDoc.id);
+                openSquad(squadId);
                 showAlert(`Squad created! 🎉 Join code is ${code}`, "✨");
             } catch(e) {
                 console.error("Create squad error:", e);
@@ -800,18 +703,8 @@
             const foundSquad = allSquadsList.find(s => s.code === code);
             if (!foundSquad) return showAlert("Squad not found! Check code and try again.", "🥺");
 
-            if (userJoinedSquadIds.includes(foundSquad.id)) {
-                closeModal('modal-join-squad');
-                input.value = '';
-                openSquad(foundSquad.id);
-                return;
-            }
-
             try {
-                const updatedJoined = [...userJoinedSquadIds, foundSquad.id];
-                const profileRef = doc(db, 'artifacts', appId, 'users', currentUser.uid, 'profile', 'data');
-                await setDoc(profileRef, { joinedSquads: updatedJoined }, { merge: true });
-
+                await set(ref(db, `pinkping/users/${currentUser.uid}/joinedSquads/${foundSquad.id}`), true);
                 closeModal('modal-join-squad');
                 input.value = '';
                 openSquad(foundSquad.id);
@@ -838,8 +731,7 @@
             if (!squad || squad.ownerId !== currentUser.uid) return;
 
             try {
-                const squadRef = doc(db, 'artifacts', appId, 'public', 'data', 'squads', activeSquadId);
-                await updateDoc(squadRef, { paused: !squad.paused });
+                await update(ref(db, `pinkping/squads/${activeSquadId}`), { paused: !squad.paused });
                 closeModal('modal-owner-settings');
                 showAlert(`Texting is now ${!squad.paused ? 'paused 🔒' : 'unpaused ▶️'}`, "⚙️");
             } catch(e) {
@@ -853,8 +745,8 @@
             if (!squad || squad.ownerId !== currentUser.uid) return;
 
             try {
-                const squadRef = doc(db, 'artifacts', appId, 'public', 'data', 'squads', activeSquadId);
-                await deleteDoc(squadRef);
+                await remove(ref(db, `pinkping/squads/${activeSquadId}`));
+                await remove(ref(db, `pinkping/messages/${activeSquadId}`)); // Cleanup messages
                 closeModal('modal-owner-settings');
                 closeActiveSquad();
                 showAlert("Squad deleted permanently! 🗑️", "💖");
@@ -864,22 +756,20 @@
         }
 
         function loadSquadMessages(squadId) {
-            if (unsubscribeMessages) unsubscribeMessages();
+            if (unsubscribeMessages) {
+                unsubscribeMessages(); // Clear old listener on RTDB
+            }
 
             messagesFeed.innerHTML = '<div class="text-center text-pink-300 font-bold text-xs p-6 animate-pulse">Fetching latest messages... ☕️</div>';
 
-            const msgsRef = collection(db, 'artifacts', appId, 'public', 'data', 'messages');
-
-            unsubscribeMessages = onSnapshot(msgsRef, (snapshot) => {
+            const msgsRef = ref(db, `pinkping/messages/${squadId}`);
+            
+            unsubscribeMessages = onValue(msgsRef, (snapshot) => {
                 let messagesList = [];
-                snapshot.forEach((d) => {
-                    const data = d.data();
-                    if (data.squadId === squadId) {
-                        messagesList.push({ id: d.id, ...data });
-                    }
+                snapshot.forEach((child) => {
+                    messagesList.push({ id: child.key, ...child.val() });
                 });
 
-                // Client-side sort by timestamp
                 messagesList.sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
                 renderMessages(messagesList);
             }, (err) => console.error("Messages sync error:", err));
@@ -891,7 +781,7 @@
             if (messages.length === 0) {
                 messagesFeed.innerHTML = `
                     <div class="text-center text-hotpink font-black text-sm my-auto opacity-70">
-                        So quiet in here... spill some tea! ☕️️✨
+                        So quiet in here... spill some tea! ☕✨
                     </div>
                 `;
                 return;
@@ -911,11 +801,9 @@
                     </div>
                     <div class="text-[9px] text-bubblegum font-semibold mx-2 mt-0.5">${timeStr}</div>
                 `;
-
                 messagesFeed.appendChild(wrapper);
             });
 
-            // Smooth auto-scroll to latest
             messagesFeed.scrollTop = messagesFeed.scrollHeight;
         }
 
@@ -932,9 +820,8 @@
             inputMessage.value = '';
 
             try {
-                const msgsRef = collection(db, 'artifacts', appId, 'public', 'data', 'messages');
-                await addDoc(msgsRef, {
-                    squadId: activeSquadId,
+                const msgsRef = ref(db, `pinkping/messages/${activeSquadId}`);
+                await push(msgsRef, {
                     text: text,
                     senderId: currentUser.uid,
                     senderName: userDisplayName,
@@ -946,22 +833,15 @@
             }
         }
 
-        // Helper escape function
         function escapeHTML(str) {
             if (!str) return '';
             return str.replace(/[&<>'"]/g, tag => ({
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                "'": '&#39;',
-                '"': '&quot;'
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;'
             }[tag] || tag));
         }
 
-        // Responsive mobile sidebar toggle
         window.toggleMobileSidebar = function() {
-            const sidebar = document.getElementById('sidebar-squads');
-            sidebar.classList.toggle('hidden');
+            document.getElementById('sidebar-squads').classList.toggle('hidden');
         }
     </script>
 </body>
